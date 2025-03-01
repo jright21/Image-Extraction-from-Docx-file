@@ -35,7 +35,7 @@ def extract_images_from_docx(docx_path, output_path):
                 # Convert to WebP using PIL
                 try:
                     with Image.open(temp_image_path) as img:
-                        img.save(webp_path, "WEBP", quality=85)  # Optimize quality
+                        img.save(webp_path, "WEBP", quality=100, lossless=True)  # Optimize quality
                     os.remove(temp_image_path)  # Remove temporary extracted image
                 except Exception as e:
                     print(f"Error converting {image_filename}: {e}")
